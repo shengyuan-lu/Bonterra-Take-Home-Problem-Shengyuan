@@ -242,22 +242,14 @@ class APIManager:
 
     def get_result(self):
 
-        try:
+        emails = list()
 
-            emails = list()
+        for id in self.get_sent_emails_id():
 
-            for id in self.get_sent_emails_id():
+            detail = self.get_sent_email_details_by_id(id)
 
-                detail = self.get_sent_email_details_by_id(id)
+            detail['top_variant'] = self.get_highest_performed_variant_from_details(detail)
 
-                detail['top_variant'] = self.get_highest_performed_variant_from_details(detail)
+            emails.append(self.convert_to_csv_ready_format(detail))
 
-                emails.append(self.convert_to_csv_ready_format(detail))
-
-            return sorted(emails, key=lambda x: x['Email Message ID'], reverse=True)
-
-        except APICallException as e:
-
-            print(e.message)
-
-            return list()
+        return sorted(emails, key=lambda x: x['Email Message ID'], reverse=True)
