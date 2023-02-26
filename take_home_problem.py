@@ -4,7 +4,7 @@ from api_call_exception import APICallException
 
 def generate_report(filename='EmailReport.csv'):
     """
-    
+
     :param filename: a file name for the generated .csv file, default is provided
     :return: No return, the .csv file is written to the disk
     """
@@ -28,6 +28,8 @@ def generate_report(filename='EmailReport.csv'):
             # write email rows
             for email in result:
                 writer.writerow(email)
+
+        print(f'Email report complete, file is {filename}')
 
     except APICallException as e:
         print(e.message)
