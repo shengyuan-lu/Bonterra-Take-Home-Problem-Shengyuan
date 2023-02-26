@@ -33,8 +33,35 @@ See ```Usage``` above.
 
 1. The current codebase contains several functions that share the same API call pattern. These functions differ only in the way they process callback data.  We can further simplify the code by creating a single function that handles the API calls. This function can accept parameters for endpoint, headers, and authentication, making it reusable for multiple functions. This improvement will result in more efficient and maintainable code, as well as reduce the risk of errors and inconsistencies. 
 
-2. I would like to conduct more comprehensive testing of the program. At present, I only have access to one set of data. To ensure that the program is robust and reliable, I intend to follow the principles of test-driven development. This means that I will write automated tests for each new feature as I develop them. By doing so, I can ensure that the program is thoroughly tested and any issues are identified and resolved early in the development process. 
+2. I would like to conduct more comprehensive testing of the program. At present, I only have access to one set of data. To ensure that the program is robust and reliable, I intend to test the program with multiple sets of data.
 
 3. The current program interface is limited to the terminal, which may not be the most user-friendly option. I recognize that in a real-world scenario, this program would likely be used by campaign managers who require a more user-friendly interface. A web or mobile UI may be developed if I have more time.
 
+4. If I were responsible for running this report on a monthly basis, I would automate the process by uploading the scripts to a remote server and configuring them to run automatically once a month. By doing so, I can reduce my workload and avoid the risk of errors or mistakes that may occur during manual execution.
+
 > Q: Outline a testing plan for this report, imagining that you are handing it off to someone else to test. What did you do to test this as you developed it? What kinds of automated testing could be helpful here?
+
+1. When I worked as a Software Quality Assurance Intern at Zoom, the test plans I created are scenario based. Here are a couple scenarios I come up with:
+
+- When API key is not correct
+  - Any error handling?
+
+- When API key is correct
+
+  - When API call returns 200:
+    
+    - When there are no email sent
+    
+    - When there are email sent, but without variants
+    
+    - When there are email sent with variants
+    
+      - When variants have the same performance (unlikely)
+      - When variants have different performance
+
+  - When API call does not return 200
+    - Any error handling?
+
+2. During the development of the program, I relied heavily on manual testing. This involved printing the output from my functions and manually comparing them to identify any inconsistencies or errors. While this approach helped me to identify obvious mistakes, it is not a sustainable solution in the long run.
+
+3. To address this, I plan to implement automated testing by following the principles of test-driven development. This involves writing unit tests for each new feature or functionality as I develop them. By doing so, I can ensure that the code is thoroughly tested and any issues are identified and resolved early in the development process. It is essential to write unit tests that cover as much of the code as possible to ensure that the program meets the necessary requirements and specifications.
