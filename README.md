@@ -12,9 +12,9 @@ This instruction assumes that you are using a linux-based system.
   1. Make sure Python 3 is installed on your machine. The version I used was ```3.11```. I am also using the following Python libraries: ```requests```, ```csv```, ```os```, ```json```. There is a great chance that you already have them on your machine. If not, you need to install them prior to running this program.
   2. Clone this repo to your machine. You can do so by typing ```git clone git@github.com:shengyuan-lu/Bonterra-Take-Home-Problem-Shengyuan.git``` in your terminal.
   3. In the ```Bonterra-Take-Home-Problem-Shengyuan``` folder, create a ```.txt``` file called ```api_key.txt```. You can do so by typing ```touch api_key.txt``` in your terminal.
-  4. On the first line of ```api_key.txt```, type your API key. The program will automatically read your API key from this file. Alternatively, you can manually enter your API key when prompted.
+  4. On the first line of ```api_key.txt```, type your API key. Save the file. The program will automatically read your API key from this file. Alternatively, you can manually enter your API key when prompted.
   5. Open terminal, and change directory to ```Bonterra-Take-Home-Problem-Shengyuan```
-  6. In the terminal, type ```python3 take_home_problem.py``` to run the program
+  6. In the terminal, type ```python3 take_home_problem.py``` to run the program. The program will notify you when a report is generated. It may take a while for the program to run.
   7. You can view the email report by typing ```cat EmailReport.csv``` in the terminal
 
 ## Sample Output Based On The API Key Provided
