@@ -34,5 +34,9 @@ def generate_report(filename='EmailReport.csv'):
     except APICallException as e:
         print(e.message)
 
+    except:
+        print('[Error]: An unknown error occurred. Program ended. ')
+        print('[Action Required]: Please double check your API key and network, then run the program again. ')
+
 if __name__ == '__main__':
     generate_report()
