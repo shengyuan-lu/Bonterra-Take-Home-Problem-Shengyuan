@@ -51,7 +51,7 @@ class APIManager:
 
         :return: a list of sent email ids
 
-        sample id_list returned:
+        sample return value:
         [469, 470, 468, 467, 466, 464, 465, 463, 462]
 
         """
@@ -93,8 +93,7 @@ class APIManager:
         :param email_id: identifies the email to be retrieved
         :return: the detail of the email based on the email_id
 
-        sample email detail returned:
-
+        sample return value:
         {
             'emailMessageId': 469,
             'name': 'Fragile Webs',
@@ -163,7 +162,7 @@ class APIManager:
         :param email_details: the detail of the email to retrieve top variant name from
         :return: the highest performed variant name
 
-        sample variant name returned:
+        sample return value:
         'Fragile Webs_Winner'
         """
 
@@ -220,10 +219,23 @@ class APIManager:
             return max_name
 
 
-    def convert_to_csv_ready_format(self, detail):
+    def convert_to_csv_ready_format(self, detail, top_variant):
         """
         :param detail: an email detail dict
+        :param top_variant: the name of the top variant of this email
         :return: parsed dict for .csv generation
+
+        sample return value:
+        {
+        	'Email Message ID': 469,
+        	'Email Name': 'Fragile Webs',
+        	'Recipients': 450,
+        	'Opens': 14,
+        	'Clicks': 2,
+        	'Unsubscribes': 1,
+        	'Bounces': 6,
+        	'Top Variant': 'Fragile Webs_Winner'
+        }
         """
 
         result = dict()
@@ -235,7 +247,7 @@ class APIManager:
         result['Clicks'] = detail['statistics']['clicks']
         result['Unsubscribes'] = detail['statistics']['unsubscribes']
         result['Bounces'] = detail['statistics']['bounces']
-        result['Top Variant'] = detail['top_variant']
+        result['Top Variant'] = top_variant
 
         return result
 
@@ -248,8 +260,8 @@ class APIManager:
 
             detail = self.get_sent_email_details_by_id(id)
 
-            detail['top_variant'] = self.get_highest_performed_variant_from_details(detail)
+            top_variant = self.get_highest_performed_variant_from_details(detail)
 
-            emails.append(self.convert_to_csv_ready_format(detail))
+            emails.append(self.convert_to_csv_ready_format(detail, top_variant))
 
         return sorted(emails, key=lambda x: x['Email Message ID'], reverse=True)
