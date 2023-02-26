@@ -37,7 +37,9 @@ See ```Usage``` above.
 
 3. The current program interface is limited to the terminal, which may not be the most user-friendly option. I recognize that in a real-world scenario, this program would likely be used by campaign managers who require a more user-friendly interface. A web or mobile UI may be developed if I have more time.
 
-4. If I were responsible for running this report on a monthly basis, I would automate the process by uploading the scripts to a remote server and configuring them to run automatically once a month. By doing so, I can reduce my workload and avoid the risk of errors or mistakes that may occur during manual execution.
+4. Although it is highly unlikely, there may be situations where multiple variants perform equally well in terms of highest open rates. To account for this, I plan to implement a more robust solution that considers all of the highest-performing variants. Currently, I keep the first highest-performing variant from the API in cases of duplicates. 
+
+5. If I were responsible for running this report on a monthly basis, I would automate the process by uploading the scripts to a remote server and configuring them to run automatically once a month. By doing so, I can reduce my workload and avoid the risk of errors or mistakes that may occur during manual execution.
 
 > Q: Outline a testing plan for this report, imagining that you are handing it off to someone else to test. What did you do to test this as you developed it? What kinds of automated testing could be helpful here?
 
