@@ -1,4 +1,4 @@
-# NGP-VAN-broadcastEmails-API-Practice
+# NGP VAN ```/broadcastEmails``` API Usage Demo
 [API Reference](https://docs.ngpvan.com/reference/broadcastemails)
 
 
