@@ -1,6 +1,29 @@
 # NGP-VAN-broadcastEmails-API-Practice
 [API Reference](https://docs.ngpvan.com/reference/broadcastemails)
 
+
+## The Problem 
+
+You work for an organization that sends emails to its supporters using NGP 7. You’ve been asked to produce a repeatable report of emails sent through the system, in order to track their performance.
+
+The report should be formatted as a delimited file returned by your program. It should include all emails sent, in reverse order of sending based on EmailMessageId. For each email, you should display the EmailMessageID and name of the email, plus all available top-line stats (Recipients, Opens, Clicks, Unsubscribes, Bounces). 
+
+Finally, you should include the name of the variant associated with that email that has the highest percentage-based performance on Opens.
+Using the language and framework of your choice, write a script or program that produces the report described.
+
+Example output:
+```
+>python take_home_problem.py
+> Email report complete, file is EmailReport.csv
+>cat EmailReport.csv
+
+Email Message ID, Email Name, Recipients, Opens, Clicks, Unsubscribes, Bounces, Top Variant
+2325647 "Join Us for a Howling Good Time!", 1599, 106, 27, 6, 4, "Don't Miss Our Grey Wolf Social"
+2324747 "Get Your Gray Wolf Tote Bag: Donate Now!", 3541, 688, 147, 10, 8, "Furry Friends in Need"
+2324646,"Tell Congress: Protect Gray Wolves", 2552, 343, 98, 5, 4, "Majestic Predators Need YOU"
+```
+
+
 ## A Brief Introduction To Program Files
 - ```take_home_problem.py``` contains the main function of this take-home problem.
 - ```api_manager.py``` contains a class that manages all aspects of API calls.
